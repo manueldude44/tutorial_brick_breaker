@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4863053331661380}
   - component: {fileID: 212211588069680042}
   - component: {fileID: 61761032394285396}
+  - component: {fileID: 114936386494410086}
   m_Layer: 0
   m_Name: Block Square
   m_TagString: Untagged
@@ -64,8 +65,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.99, y: 0.99}
   m_EdgeRadius: 0
+--- !u!114 &114936386494410086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1326483263879794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dba178b95a9247428119f5a820f536c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroySoundClip: {fileID: 8300000, guid: a22bd4dff0fbd414d9006e755e73b41d, type: 3}
 --- !u!212 &212211588069680042
 SpriteRenderer:
   m_ObjectHideFlags: 1
