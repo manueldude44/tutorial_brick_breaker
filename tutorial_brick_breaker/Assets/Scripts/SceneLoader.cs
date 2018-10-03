@@ -13,6 +13,7 @@ public class SceneLoader : MonoBehaviour
   public void LoadStartScene()
   {
     SceneManager.LoadScene(0);
+    FindObjectOfType<GameSession>().ResetGame();
   }
 
   public void QuitGame()
@@ -33,5 +34,6 @@ public class SceneLoader : MonoBehaviour
   public void LoadLevelOne()
   {
     SceneManager.LoadScene("Level1");
+    FindObjectOfType<GameSession>().ResetGame();
   }
 }

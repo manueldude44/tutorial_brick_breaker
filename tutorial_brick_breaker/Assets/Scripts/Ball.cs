@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour {
+public class Ball : MonoBehaviour
+{
 
   [SerializeField] Paddle paddle;
   [SerializeField] float xPush = 1f;
@@ -24,15 +24,16 @@ public class Ball : MonoBehaviour {
   }
 
   // Update is called once per frame
-  void Update () {
-		if (hasGameStarted)
+  void Update()
+  {
+    if (hasGameStarted)
     {
       return;
     }
 
     LaunchOnMouseClick();
     LockBallToPaddle();
-	}
+  }
 
   private void OnCollisionEnter2D(Collision2D collision)
   {

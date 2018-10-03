@@ -2,24 +2,14 @@
 
 public class Brick : MonoBehaviour
 {
-
   [SerializeField] AudioClip onDestroySoundClip;
-
-  GameSession gameStatus;
-  Level level;
-
-  private void Start()
-  {
-    gameStatus = FindObjectOfType<GameSession>();
-    level = FindObjectOfType<Level>();
-    level.AddBreakableBlock();
-  }
 
   private void OnCollisionEnter2D(Collision2D collision)
   {
-    gameStatus.UpdateScore();
-    Destroy(gameObject);
+    FindObjectOfType<GameSession>().UpdateScore();    
     AudioSource.PlayClipAtPoint(onDestroySoundClip, new Vector3());
-    level.RemoveBreakableBlock();
+    FindObjectOfType<Level>().RemoveBreakableBlock();
+
+    Destroy(gameObject);
   }
 }

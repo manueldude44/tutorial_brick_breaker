@@ -2,18 +2,17 @@
 
 public class Level : MonoBehaviour
 {
-  [SerializeField] int breakableBlocks = 0;
-
+  int breakableBlocks = 0;
   SceneLoader sceneLoader;
+
+  private void Awake()
+  {
+    breakableBlocks = FindObjectsOfType<Brick>().Length;
+  }
 
   private void Start()
   {
     sceneLoader = FindObjectOfType<SceneLoader>();
-  }
-
-  public void AddBreakableBlock()
-  {
-    breakableBlocks++;
   }
 
   public void RemoveBreakableBlock()
@@ -22,7 +21,7 @@ public class Level : MonoBehaviour
 
     if (breakableBlocks == 0)
     {
-      sceneLoader.LoadWinScene();
+      sceneLoader.LoadNextScene();
     }
   }
 }
